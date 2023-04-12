@@ -12,7 +12,9 @@ const ImageGrid = ({ query }) => {
     let isMounted = true;
     setLoading(true);
     setError(null);
-    axios.get(`http://localhost:3100/images?q=${encodeURIComponent(query)}`)
+    axios.get(
+      `https://image-quest-backend.onrender.com/images?q=${encodeURIComponent(query)}`
+      )
       .then((response)=>{
         const fetchedImages = response.data;
         if(isMounted){
